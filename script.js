@@ -5,6 +5,9 @@ pizzaJson.map((item, index)=>{
     let pizzaitem = e('.models .pizza-item').cloneNode(true);
     // preencher as informações em pizzaitem
     pizzaitem.querySelector('.pizza-item--img img').src = item.img
+    pizzaitem.querySelector('.pizza-item--price').innerHTML = `R$ ${item.price}`
+    pizzaitem.querySelector('.pizza-item--name').innerHTML = item.name
+    pizzaitem.querySelector('.pizza-item--desc').innerHTML = item.description
     console.log(pizzaitem);
     console.log(item, index);
 
