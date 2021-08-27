@@ -1,8 +1,8 @@
 
-const e = (el) => document.querySelector(el);
+const elem = (el) => document.querySelector(el);
 
 pizzaJson.map((item, index)=>{
-    let pizzaitem = e('.models .pizza-item').cloneNode(true);
+    let pizzaitem = elem('.models .pizza-item').cloneNode(true);
     // preencher as informações em pizzaitem
     pizzaitem.querySelector('.pizza-item--img img').src = item.img
     pizzaitem.querySelector('.pizza-item--price').innerHTML = `R$ ${item.price.toFixed(2)}`
@@ -10,9 +10,11 @@ pizzaJson.map((item, index)=>{
     pizzaitem.querySelector('.pizza-item--desc').innerHTML = item.description
     pizzaitem.querySelector('a').addEventListener('click', (e) =>{
         e.preventDefault()
+        elem('.pizzaWindowArea').style.display = "flex"
+        elem('.pizzaBig img').src = item.img
     })
     console.log(pizzaitem);
     console.log(item, index);
 
-    e('.pizza-area').append(pizzaitem);
+    elem('.pizza-area').append(pizzaitem);
 })
