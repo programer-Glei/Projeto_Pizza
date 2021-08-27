@@ -19,6 +19,9 @@ pizzaJson.map((item, index)=>{
         elem('.pizzaInfo h1').innerHTML = item.name
         elem('.pizzaInfo--desc').innerHTML = item.description
         elem('.pizzaInfo--actualPrice').innerHTML = `R$ ${item.price.toFixed(2)}`
+        document.querySelectorAll('.pizzaInfo--size span').forEach((span, id)=>{
+            span.innerHTML = item.sizes[id]
+        })
         elem('.pizzaInfo--cancelButton').addEventListener('click', (e) =>{
             elem('.pizzaWindowArea').style.display = "none"
         })
