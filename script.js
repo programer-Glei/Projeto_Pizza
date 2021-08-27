@@ -13,7 +13,7 @@ pizzaJson.map((item, index)=>{
         elem('.pizzaWindowArea').style.display = "flex"
         elem('.pizzaBig img').src = item.img
         elem('.pizzaInfo h1').innerHTML = item.name
-        elem('.pizzaBig img').src = item.img
+        elem('.pizzaInfo--desc').innerHTML = item.description
     })
     console.log(pizzaitem);
     console.log(item, index);
