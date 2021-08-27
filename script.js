@@ -12,6 +12,8 @@ pizzaJson.map((item, index)=>{
         e.preventDefault()
         elem('.pizzaWindowArea').style.display = "flex"
         elem('.pizzaBig img').src = item.img
+        elem('.pizzaInfo h1').innerHTML = item.name
+        elem('.pizzaBig img').src = item.img
     })
     console.log(pizzaitem);
     console.log(item, index);
