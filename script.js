@@ -10,7 +10,11 @@ pizzaJson.map((item, index)=>{
     pizzaitem.querySelector('.pizza-item--desc').innerHTML = item.description
     pizzaitem.querySelector('a').addEventListener('click', (e) =>{
         e.preventDefault()
+        elem('.pizzaWindowArea').style.opacity = 0
         elem('.pizzaWindowArea').style.display = "flex"
+        setTimeout(() =>{
+            elem('.pizzaWindowArea').style.opacity = 1
+        }, 200)
         elem('.pizzaBig img').src = item.img
         elem('.pizzaInfo h1').innerHTML = item.name
         elem('.pizzaInfo--desc').innerHTML = item.description
