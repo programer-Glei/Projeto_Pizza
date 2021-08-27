@@ -14,6 +14,10 @@ pizzaJson.map((item, index)=>{
         elem('.pizzaBig img').src = item.img
         elem('.pizzaInfo h1').innerHTML = item.name
         elem('.pizzaInfo--desc').innerHTML = item.description
+        elem('.pizzaInfo--actualPrice').innerHTML = `R$ ${item.price.toFixed(2)}`
+        elem('.pizzaInfo--cancelButton').addEventListener('click', (e) =>{
+            elem('.pizzaWindowArea').style.display = "none"
+        })
     })
     console.log(pizzaitem);
     console.log(item, index);
