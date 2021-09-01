@@ -1,4 +1,6 @@
 
+let modalQt = 1
+
 const elem = (el) => document.querySelector(el);
 
 pizzaJson.map((item, index)=>{
@@ -22,6 +24,10 @@ pizzaJson.map((item, index)=>{
         document.querySelectorAll('.pizzaInfo--size span').forEach((span, id)=>{
             span.innerHTML = item.sizes[id]
         })
+
+        elem('.pizzaInfo--qt').innerHTML = modalQt
+
+
         elem('.pizzaInfo--cancelButton').addEventListener('click', (e) =>{
             elem('.pizzaWindowArea').style.display = "none"
         })
