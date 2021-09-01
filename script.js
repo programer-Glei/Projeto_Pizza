@@ -37,9 +37,7 @@ pizzaJson.map((item, index)=>{
             elem('.pizzaWindowArea').style.display = "none"
         })
     })
-    console.log(pizzaitem);
-    console.log(item, index);
-
+    
     elem('.pizza-area').append(pizzaitem);
 })
 
@@ -66,5 +64,5 @@ document.querySelectorAll('.pizzaInfo--size').forEach((span, id)=>{
 
 elem('.pizzaInfo--addButton').addEventListener('click', ()=>{
     //Qual é a pizza
-    
+    console.log('pizza', modalKey)
 })
