@@ -1,6 +1,7 @@
 
 let modalQt = 1
 let cart = []
+let modalKey = 0
 
 const elem = (el) => document.querySelector(el);
 
@@ -15,6 +16,7 @@ pizzaJson.map((item, index)=>{
         e.preventDefault()
         let key = e.target.closest('.pizza item').getAttribute('data-key')
         modalQt = 1
+        modalKey = key
         elem('.pizzaWindowArea').style.opacity = 0
         elem('.pizzaWindowArea').style.display = "flex"
         setTimeout(() =>{
@@ -60,4 +62,9 @@ document.querySelectorAll('.pizzaInfo--size').forEach((span, id)=>{
         elem('.pizzaInfo--size.selected').classList.remove('selected')
         span.classList.add('selected')
     })
+})
+
+elem('.pizzaInfo--addButton').addEventListener('click', ()=>{
+    //Qual é a pizza
+    
 })
