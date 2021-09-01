@@ -52,3 +52,10 @@ elem('.pizzaInfo--qtmenos').addEventListener('click', ()=>{
         elem('.pizzaInfo--qt').innerHTML = modalQt
     }
 })
+
+document.querySelectorAll('.pizzaInfo--size').forEach((span, id)=>{
+    span.addEventListener('click', ()=>{
+        elem('.pizzaInfo--size.selected').classList.remove('selected')
+        span.classList.add('selected')
+    })
+})
