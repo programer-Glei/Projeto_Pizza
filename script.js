@@ -12,6 +12,7 @@ pizzaJson.map((item, index)=>{
     pizzaitem.querySelector('.pizza-item--desc').innerHTML = item.description
     pizzaitem.querySelector('a').addEventListener('click', (e) =>{
         e.preventDefault()
+        modalQt = 1
         elem('.pizzaWindowArea').style.opacity = 0
         elem('.pizzaWindowArea').style.display = "flex"
         setTimeout(() =>{
@@ -36,4 +37,11 @@ pizzaJson.map((item, index)=>{
     console.log(item, index);
 
     elem('.pizza-area').append(pizzaitem);
+})
+
+// EVENTOS DE MODAL
+
+elem('.pizzaInfo--qtmais').addEventListener('click', ()=>{
+    modalQt++
+    elem('.pizzaInfo--qt').innerHTML = modalQt
 })
