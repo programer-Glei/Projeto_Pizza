@@ -47,7 +47,7 @@ elem('.pizzaInfo--qtmais').addEventListener('click', ()=>{
 })
 
 elem('.pizzaInfo--qtmenos').addEventListener('click', ()=>{
-    if(modalQt !=0){
+    if(modalQt > 1){
         modalQt--
         elem('.pizzaInfo--qt').innerHTML = modalQt
     }
