@@ -1,5 +1,6 @@
 
 let modalQt = 1
+let cart = []
 
 const elem = (el) => document.querySelector(el);
 
@@ -12,6 +13,7 @@ pizzaJson.map((item, index)=>{
     pizzaitem.querySelector('.pizza-item--desc').innerHTML = item.description
     pizzaitem.querySelector('a').addEventListener('click', (e) =>{
         e.preventDefault()
+        let key = e.target.closest('.pizza item').getAttribute('data-key')
         modalQt = 1
         elem('.pizzaWindowArea').style.opacity = 0
         elem('.pizzaWindowArea').style.display = "flex"
