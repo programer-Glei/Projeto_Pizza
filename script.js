@@ -8,13 +8,14 @@ const elem = (el) => document.querySelector(el);
 pizzaJson.map((item, index)=>{
     let pizzaitem = elem('.models .pizza-item').cloneNode(true);
     // preencher as informações em pizzaitem
+    pizzaitem.setAttribute('data-key', index)
     pizzaitem.querySelector('.pizza-item--img img').src = item.img
     pizzaitem.querySelector('.pizza-item--price').innerHTML = `R$ ${item.price.toFixed(2)}`
     pizzaitem.querySelector('.pizza-item--name').innerHTML = item.name
     pizzaitem.querySelector('.pizza-item--desc').innerHTML = item.description
     pizzaitem.querySelector('a').addEventListener('click', (e) =>{
         e.preventDefault()
-        let key = e.target.closest('.pizza item').getAttribute('data-key')
+        let key = e.target.closest('.pizza-item').getAttribute('data-key')
         modalQt = 1
         modalKey = key
         elem('.pizzaWindowArea').style.opacity = 0
@@ -64,5 +65,8 @@ document.querySelectorAll('.pizzaInfo--size').forEach((span, id)=>{
 
 elem('.pizzaInfo--addButton').addEventListener('click', ()=>{
     //Qual é a pizza
-    console.log('pizza', modalKey)
+    console.log("pizza", modalKey)
+
+    //Qual o tamanho
+    elem('.pizzaInfo--size.selected').getAttribute('data-key')
 })
