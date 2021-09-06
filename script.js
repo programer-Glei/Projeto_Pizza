@@ -68,14 +68,12 @@ elem('.pizzaInfo--addButton').addEventListener('click', ()=>{
     console.log("pizza", modalKey)
 
     //Qual o tamanho
-    let size = elem('.pizzaInfo--size.selected').getAttribute('data-key')
+    let size = parseInt(elem('.pizzaInfo--size.selected').getAttribute('data-key'))
 
     cart.push({
         id:pizzaJson[modalKey].id,
         size,
         qt:modalQt
     })
-
-    //Quantas pizza
-
+    elem('.pizzaWindowArea').style.display = "none"
 })
