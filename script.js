@@ -70,10 +70,22 @@ elem('.pizzaInfo--addButton').addEventListener('click', ()=>{
     //Qual o tamanho
     let size = parseInt(elem('.pizzaInfo--size.selected').getAttribute('data-key'))
 
-    cart.push({
-        id:pizzaJson[modalKey].id,
-        size,
-        qt:modalQt
+    let identifier = pizzaJson[modalKey].id+'@'+size
+
+    let key = cart.findIndex((item)=>{
+        return item.identifier == identifier
     })
+
+    if(key > -1){
+        cart[key].qt += modalQt
+    }else{
+        cart.push({
+            identifier,
+            id:pizzaJson[modalKey].id,
+            size,
+            qt:modalQt
+        })
+    }
+
     elem('.pizzaWindowArea').style.display = "none"
 })
