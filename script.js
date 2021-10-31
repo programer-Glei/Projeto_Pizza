@@ -94,10 +94,17 @@ function updateCart(){
     if(cart.length > 0){
         elem('aside').classList.add('show')
         elem('.cart').innerHTML = ''
+        
+        let subtotal = 0
+        let desconto = 0
+        let total = 0
+
         for(let i in cart){
             let pizzaItem = pizzaJson.find((item)=>{
                 return item.id == cart[i].id
             })
+
+            subtotal += pizzaItem.price * cart[i].qt
 
             let cartItem = elem('.models .cart--item').cloneNode(true)
             let pizzaSizeName
@@ -131,6 +138,11 @@ function updateCart(){
             })
             elem('.cart').append(cartItem)
         }
+        desconto = subtotal * 0.1
+        total = subtotal - desconto
+        elem('.subtotal span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`
+        elem('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(2)}`
+        elem('.total span:last-child').innerHTML = `R$ ${total.toFixed(2)}`
     }else{
         elem('aside').classList.remove('show')
     }
