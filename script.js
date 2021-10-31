@@ -96,6 +96,10 @@ elem('.menu-openner').addEventListener('click', ()=>{
     }
 })
 
+elem('.menu-closer').addEventListener('click', ()=>{
+    elem('aside').style.left = '100vw'
+})
+
 function updateCart(){
     elem('.menu-openner span').innerHTML = cart.length
     if(cart.length > 0){
@@ -152,5 +156,6 @@ function updateCart(){
         elem('.total span:last-child').innerHTML = `R$ ${total.toFixed(2)}`
     }else{
         elem('aside').classList.remove('show')
+        elem('aside').style.left = '100vw'
     }
 }
