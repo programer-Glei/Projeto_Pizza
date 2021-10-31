@@ -90,7 +90,14 @@ elem('.pizzaInfo--addButton').addEventListener('click', ()=>{
     elem('.pizzaWindowArea').style.display = "none"
 })
 
+elem('.menu-openner').addEventListener('click', ()=>{
+    if(cart.length > 0){
+        elem('aside').style.left = '0'
+    }
+})
+
 function updateCart(){
+    elem('.menu-openner span').innerHTML = cart.length
     if(cart.length > 0){
         elem('aside').classList.add('show')
         elem('.cart').innerHTML = ''
