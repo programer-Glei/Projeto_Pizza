@@ -86,6 +86,19 @@ elem('.pizzaInfo--addButton').addEventListener('click', ()=>{
             qt:modalQt
         })
     }
-
+    updateCart()
     elem('.pizzaWindowArea').style.display = "none"
 })
+
+function updateCart(){
+    if(cart.length > 0){
+        elem('aside').classList.add('show')
+        for(let i in cart){
+            let pizzaItem = pizzaJson.find((item)=>{
+                return item.id = cart[i].id
+            })
+        }
+    }else{
+        elem('aside').classList.remove('show')
+    }
+}
